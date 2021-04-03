@@ -24,10 +24,10 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/basket"
+            <router-link class="nav-link" to="/cart"
               >Basket <b-icon-bag></b-icon-bag
               ><span class="badge badge-success ml-2">{{
-                qty_order.length
+                updateCart ? updateCart.length : qty_order.length
               }}</span></router-link
             >
           </li>
@@ -47,6 +47,7 @@ export default {
       qty_order: [],
     };
   },
+  props: ["updateCart"],
   methods: {
     setQty(data) {
       this.qty_order = data;
