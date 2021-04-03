@@ -8,7 +8,9 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.nama }}</h5>
       <p class="card-text">Harga : {{ product.harga }}</p>
-      <a href="#" class="btn btn-success"><b-icon-cart></b-icon-cart> Order</a>
+      <router-link class="btn btn-success" :to="'/foods/' + product.id"
+        ><b-icon-cart></b-icon-cart> Order</router-link
+      >
     </div>
   </div>
 </template>

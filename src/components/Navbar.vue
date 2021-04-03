@@ -26,7 +26,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/basket"
               >Basket <b-icon-bag></b-icon-bag
-              ><span class="badge badge-success ml-2">0</span></router-link
+              ><span class="badge badge-success ml-2">{{
+                qty_order.length
+              }}</span></router-link
             >
           </li>
         </ul>
@@ -36,8 +38,26 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Navbar",
+  data() {
+    return {
+      qty_order: [],
+    };
+  },
+  methods: {
+    setQty(data) {
+      this.qty_order = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/keranjangs")
+      .then((response) => this.setQty(response.data))
+      .catch((error) => console.log(error));
+  },
 };
 </script>
 
