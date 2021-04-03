@@ -14,9 +14,9 @@
         </div>
       </div>
 
-      <div class="row mb-3">
+      <div class="row mb-4">
         <div
-          class="col-md-3 mt-4"
+          class="col-md-4 mt-4"
           v-for="product in products"
           :key="product.id"
         >
@@ -47,22 +47,15 @@ export default {
     };
   },
   methods: {
-    setProduct(data) {
+    setProducts(data) {
       this.products = data;
     },
   },
   mounted() {
     axios
       .get("http://localhost:3000/best-products")
-      .then(function (response) {
-        // handle success
-        this.setProducts(response.data);
-        // console.log("Success : ", response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log("Error : ", error);
-      });
+      .then((response) => this.setProducts(response.data))
+      .catch((error) => console.log(error));
   },
 };
 </script>

@@ -9,9 +9,9 @@
               <h2><strong>Delicious Foods</strong><br />In Your Hands</h2>
               <p>Pick Your Foods Now!!</p>
               <!-- <router-link class="btn btn-lg btn-success">Order</router-link> -->
-              <button class="btn btn-lg btn-success">
+              <router-link class="btn btn-lg btn-success" to="/foods">
                 <b-icon-arrow-right></b-icon-arrow-right> Order
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -33,9 +33,9 @@
               <h2><strong>Delicious Foods</strong><br />In Your Hands</h2>
               <p>Pick Your Foods Now!!</p>
               <!-- <router-link class="btn btn-lg btn-success">Order</router-link> -->
-              <button class="btn btn-lg btn-success">
+              <router-link class="btn btn-lg btn-success" to="/foods">
                 <b-icon-arrow-right></b-icon-arrow-right> Order
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
